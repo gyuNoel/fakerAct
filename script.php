@@ -34,6 +34,18 @@ if ($conn->connect_error) {
 // }
 
 
+//EMPLOYEE TABLE
+$sql = $conn->prepare("INSERT INTO employee(lastname,firstname,office_id,address) VALUES (?,?,?,?)");
+$sql->bind_param('ssis',$firstname,$lastname,$office_id,$address);
+
+
+for($i=1;$i<=200;$i++){
+    $lastname = $faker->lastname;
+    $firstname = $faker->firstName;
+    $office_id = $faker->numberBetween(1, 50);
+    $address = $faker->address;
+    $sql->execute();
+}
 
 
 $sql->close();

@@ -11,7 +11,7 @@ $faker = Faker\Factory::create('en_PH');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fake User Profiles (Philippines)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -69,11 +69,11 @@ $faker = Faker\Factory::create('en_PH');
                     'Chef',
                 ];
 
-                for ($i = 0; $i <= 5; $i++) {
+                for ($i = 0; $i < 5; $i++) {
                     echo "<tr>";
                     echo '<td>' . $faker->name . '</td>';
                     echo '<td>' . $faker->email . '</td>';
-                    echo '<td>' . $faker->mobileNumber() . '</td>';
+                    echo '<td>' . $faker->numerify('+63 9## ### ####') . '</td>';
                     echo '<td>' . $faker->address . '</td>';
                     echo '<td>' . $faker->date('Y-m-d') . '</td>';
                     echo '<td>' . $faker->randomElement($jobPositions) . '</td>';

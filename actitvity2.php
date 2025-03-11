@@ -18,7 +18,7 @@ $faker = Faker\Factory::create('en_PH');
 
 <body>
     <div class="container mt-5">
-        <h2 class="mb-4">Fake User Profiles (Philippines)</h2>
+        <h2 class="mb-4">Fake Books</h2>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -33,31 +33,24 @@ $faker = Faker\Factory::create('en_PH');
             <tbody>
                 <?php
                 $genres = [
-                    "Fantasy",
-                    "Science Fiction",
+                    "Fiction",
                     "Mystery",
-                    "Thriller",
-                    "Horror",
+                    "Science Fiction",
+                    "Fantasy",
                     "Romance",
-                    "Historical Fiction",
-                    "Dystopian",
-                    "Adventure",
-                    "Young Adult",
-                    "Literary Fiction",
-                    "Crime",
-                    "Magical Realism",
-                    "Non-Fiction",
-                    "Poetry",
+                    "Thriller",
+                    "Historical",
+                    "Horror"
                 ];
 
                 for ($i = 0; $i <= 15; $i++) {
                     echo "<tr>";
                     echo '<td>' . $faker->word();  '</td>';
-                    // echo '<td>' . $faker->email . '</td>';
-                    // echo '<td>' . $faker->mobileNumber() . '</td>';
-                    // echo '<td>' . $faker->address . '</td>';
-                    // echo '<td>' . $faker->date('Y-m-d') . '</td>';
-                    // echo '<td>' . $faker->randomElement($jobPositions) . '</td>';
+                    echo '<td>' . $faker->name . '</td>';
+                    echo '<td>' . $faker->randomElement($genres) . '</td>';
+                    echo '<td>' . $faker->dateTimeBetween('-104 years', 'now')->format('Y'). '</td>';
+                    echo '<td>' . $faker->numerify('#############').  '</td>';
+                    echo '<td>' . $faker->paragraph(2) . '</td>';
                     echo "</tr>";
                 }
                 ?>

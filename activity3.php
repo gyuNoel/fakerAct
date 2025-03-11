@@ -31,8 +31,9 @@ for ($i = 0; $i <= 10; $i++) {
     echo "<tr>";
     echo '<td>' . $faker->uuid();  '</td>';//uuid
     echo '<td>' . $faker->name();  '</td>';//fullname
-    echo '<td>' . $faker->email();  '</td>';//email
-    echo '<td>' . $faker->userName();  '</td>';//username
+    $email = $faker->email; // Email Address
+    echo '<td>' . $email .  '</td>';//email
+    echo '<td>' . $username = strtolower(explode('@', $email)[0]);  '</td>';//username
     echo '<td>' . $faker->sha256();  '</td>';//password
     echo '<td>' . $faker->dateTimeBetween('-2 years', 'now')->format('Y-m-d') .  '</td>';//account date creation
     echo "</tr>";

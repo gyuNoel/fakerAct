@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 //MASS FAKE DATA ADDITION TO OFFICES TABLE
 
 
-$sql = $conn->prepare("INSERT INTO office(name,contactnum,email,address,city,country,postal) VALUES (?,?,?,?,?,?,?)");
+$sql = $conn->prepare("INSERT INTO office(name,contactnu m,email,address,city,country,postal) VALUES (?,?,?,?,?,?,?)");
 $sql->bind_param('sssssss', $name, $contactnum, $email, $address, $city, $country, $postal);
 
 
